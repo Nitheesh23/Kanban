@@ -1,0 +1,370 @@
+/* General Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+}
+
+/* ToolBox */
+.toolbox-cont {
+  background-color: #333;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbox-priority-cont {
+  background-color: #444;
+  height: 3.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0 1rem;
+  gap: 1rem;
+}
+
+.color-box {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.color-box:hover {
+  transform: scale(1.2);
+}
+
+.lightpink { background-color: lightpink; }
+.lightgreen { background-color: lightgreen; }
+.lightblue { background-color: lightblue; }
+.black { background-color: black; }
+
+/* Action buttons */
+.action-btn-cont {
+  display: flex;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.action-btn-cont > * {
+  display: flex;
+  color: white;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #555;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.action-btn-cont > *:hover {
+  background-color: #4bb543;
+  transform: scale(1.2);
+}
+
+.show-all-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #555;
+  color: white;
+  font-size: 1rem;
+  width: 6rem;
+  height: 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.show-all-btn:hover {
+  background-color: #4bb543;
+  transform: scale(1.1);
+}
+
+/* Ticket design */
+.main-cont {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.ticket-cont {
+  height: 12rem;
+  width: 15rem;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ticket-color {
+  height: 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+.ticket-id {
+  height: 2rem;
+  background-color: #f9f9f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.ticket-lock {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Modal Pop up */
+.modal-cont {
+  height: 50vh;
+  width: 45vw;
+  position: absolute;
+  top: 30%;
+  left: 27%;
+  display: flex;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.textArea-cont {
+  height: 100%;
+  width: 70%;
+  background-color: #f9f9f9;
+  resize: none;
+  outline: none;
+  border: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-right: 2px solid #ddd;
+}
+
+.priority-colors-container {
+  background-color: #444;
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.priority-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.priority-color {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.priority-color:hover {
+  transform: scale(1.2);
+}
+
+.priority-label {
+  color: white;
+  font-size: 1rem;
+}
+
+.active {
+  border: 2px solid white;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #4bb543;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.submit-btn:hover {
+  background-color: #3e9535;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .toolbox-cont {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .toolbox-priority-cont {
+    height: auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .action-btn-cont {
+    display: flex;
+    flex-direction: row; /* Ensure buttons are in a row */
+    gap: 0.5rem;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    margin-top: 1rem; /* Space between filter and buttons */
+    position: relative; /* Ensure positioning context */
+    width: 100%; /* Full width of the container */
+  }
+
+  .action-btn-cont > * {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    background-color: #555; /* Default background color */
+    color: white; /* Text color */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .action-btn-cont > *:hover {
+    background-color: #4bb543; /* Green color on hover */
+    transform: scale(1); /* Scale effect on hover */
+  }
+
+  .show-all-btn {
+    width: 4rem;
+    height: 2rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #555; /* Default background color */
+    color: white; /* Text color */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s; /* Smooth transitions */
+  }
+
+  .show-all-btn:hover {
+    background-color: #4bb543; /* Green color on hover */
+    transform: scale(1); /* Scale effect on hover */
+  }
+
+  .modal-cont {
+    height: 60vh; /* Adjust height for mobile view */
+    width: 80vw; /* Adjust width for mobile view */
+    position: fixed; /* Change to fixed position for better positioning */
+    top: 130px; /* Position just below the toolbox (height of toolbox) */
+    left: 10%; /* Center horizontally */
+    flex-direction: column; /* Stack items vertically */
+    margin: 0; /* Remove any default margin */
+  }
+
+  .textArea-cont {
+    width: 100%; /* Take full width on mobile */
+    height: 70%; /* Adjust height for mobile view */
+    border-right: none; /* Remove right border on mobile */
+    border-bottom: 2px solid #ddd; /* Add bottom border */
+    padding: 1rem;
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .priority-colors-container {
+    width: 100%; /* Take full width on mobile */
+    height: auto; /* Adjust height to fit new layout */
+    border-top: 2px solid #ddd; /* Add top border */
+    padding: 1rem;
+    display: flex; /* Use flexbox to align items in a row */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+    justify-content: center; /* Center items */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+  }
+
+  .priority-item {
+    flex: 1 1 auto; /* Allow items to grow and shrink as needed */
+    display: flex; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: 0.5rem; /* Add space between items */
+  }
+
+  .priority-color {
+    height: 1.5rem; /* Adjust size of priority colors */
+    width: 1.5rem; /* Adjust size of priority colors */
+  }
+
+  .priority-label {
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .submit-btn {
+    width: 50%; /* Reduce width of submit button */
+    padding: 0.5rem; /* Adjust padding */
+    font-size: 0.9rem; /* Reduce font size */
+    margin: 1rem auto; /* Center button and adjust margin */
+  }
+
+  .main-cont {
+    display: grid; /* Switch to grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 1rem; /* Space between tickets */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  .ticket-cont {
+    width: 100%; /* Take full width on mobile */
+    height: auto; /* Adjust height to fit content */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
